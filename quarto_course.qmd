@@ -1,0 +1,37 @@
+---
+title: "qmd_course"
+author: "Sens"
+date: today
+format: 
+ html:
+  self-contained: true #fundamental to send to other people
+  toc: true
+  toc-title: My contents
+  toc-location: left
+  theme:
+   light: minty
+   dark: superhero
+  fontsize: 14px
+lang: it
+editor: visual
+---
+
+# First level
+
+you can use the hash symbol # to specify different levels on your document, like title
+
+## Section
+
+with 2 ash
+
+### Subsection
+
+with 3 ash 
+
+#### Pararaph
+
+with 4 ash
+
+
+In order to write in *italic* you need to place the sentence within * sign, you will put it between a double ** sign for **bold** 
+and three *** for ***bold italic***

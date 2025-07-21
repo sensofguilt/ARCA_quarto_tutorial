@@ -1,0 +1,16 @@
+---
+title: "Rbase"
+author: "Andreella"
+format: html
+editor: visual
+---
+
+## Introduzione a R, Andreella
+
+```{r}
+3+3
+```
+```{r}
+install.packages("ggplot2")
+```
+

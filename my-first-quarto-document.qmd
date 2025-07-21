@@ -1,0 +1,42 @@
+# Hello!
+
+This is your very first quarto document
+
+## A section
+
+You can organize it in sections
+
+
+::: {.grid}
+
+::: {.g-col-4}
+
+First column, 4/12 of the total width
+
+:::
+
+::: {.g-col-8}
+
+Second column, 8/12 of the total width
+
+:::
+
+:::
+
+### A subsection
+
+And subsections too!!
+
+```{r}
+3 + 2
+```
+
+Here's another code chunk but I don't want you to see my code to obtain @fig-myplot
+
+```{r}
+#| echo: false
+#| fig-cap: "A plot"
+#| fig-cap-location: margin
+#| label: fig-myplot
+plot(rock$area, rock$peri)
+```
