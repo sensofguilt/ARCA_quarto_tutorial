@@ -4,7 +4,19 @@ format: html
 editor: visual
 ---
 
-# Not only a verduraio
+## Not only a verduraio
 
 Hi, here's my first webpage with a presentation of myself.
-[HTML](quarto_course.html)
+
+### Between the two fighters...
+
+After years of indecision between psychology and statistics, I have found my place at [El Tamiso](https://www.eltamiso.it/) working as a shop assistant in Piazza delle Erbe 
+
+
+![](img/erbe.jpg)
+
+
+Thanks to this opportunity I got to experience and I achieved one of my most impressive results of the year, selling fruit and vegetables to my father (Figure 1).
+
+![Figure 1:Il pagamento](img/pp.jpg)
+
