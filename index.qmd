@@ -24,7 +24,7 @@ editor: visual
   + Susine Gialle
   + Pere Turandot
   
-Verdura di Luglio:
+*Verdura di Luglio:
  + Pomodori:
   - Grappolo
   - Peretto
