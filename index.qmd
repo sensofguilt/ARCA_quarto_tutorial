@@ -25,19 +25,19 @@ editor: visual
   + Pere Turandot
   
 * Verdura di Luglio:
- + Pomodori:
-   - Grappolo
-   - Peretto
-   - Cuore di Bue
-   - Costoluto
- + Pomodorini:
-   - Datterino
-   - Ciliegino
-   - Piccadilly
- + Insalata:
-   - Canasta
-   - Gentile
-   - Romana
+  + Pomodori:
+    - Grappolo
+    - Peretto
+    - Cuore di Bue
+    - Costoluto
+  + Pomodorini:
+    - Datterino
+    - Ciliegino
+    - Piccadilly
+  + Insalata:
+    - Canasta
+    - Gentile
+    - Romana
 :::
 
 ## Not only a verduraio
@@ -56,5 +56,9 @@ Thanks to this opportunity I got to experience and I achieved one of my most imp
 
 ![Figure 1:Il pagamento](img/pp.jpg)
 
-I know it seems crazy but I can't 
 
+::: {.callout-caution}
+## DON'T TRASH BAD LOOKING FOOD
+
+If you don't want to see me angry pay attention, I will not repeat this again
+:::
