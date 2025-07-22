@@ -24,20 +24,20 @@ editor: visual
   + Susine Gialle
   + Pere Turandot
   
-*Verdura di Luglio:
+* Verdura di Luglio:
  + Pomodori:
-  - Grappolo
-  - Peretto
-  - Cuore di Bue
-  - Costoluto
+   - Grappolo
+   - Peretto
+   - Cuore di Bue
+   - Costoluto
  + Pomodorini:
-  - Datterino
-  - Ciliegino
-  - Piccadilly
+   - Datterino
+   - Ciliegino
+   - Piccadilly
  + Insalata:
-  - Canasta
-  - Gentile
-  - Romana
+   - Canasta
+   - Gentile
+   - Romana
 :::
 
 ## Not only a verduraio
