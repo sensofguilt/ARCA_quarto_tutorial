@@ -1,5 +1,5 @@
 ---
-title: "index"
+title: "Me, myself, I"
 format: html
 editor: visual
 ---
