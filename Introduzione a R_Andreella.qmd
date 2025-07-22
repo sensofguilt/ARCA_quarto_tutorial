@@ -8,9 +8,52 @@ editor: visual
 ## Introduzione a R, Andreella
 
 ```{r}
-3+3
+rm(list = ls())
 ```
+
+
+### L2, Martedì
+
 ```{r}
-install.packages("ggplot2")
+age <- c(20, 25, 30, 45, 20, 50)
+length(age)
+sex <- c("F","M","M","F","F","F")
+length(sex)
+
+mat = matrix(c(1:25), nrow = 5, ncol = 5, byrow = T)
+mat
+dim(mat)
 ```
+
+```{r dataframe}
+df = data.frame(Sex = sex, Age = age, stringsAsFactors = T)
+df
+colnames(df)
+str(df)
+
+df$Edu <- rep(c("High","Low","Medium"),2)
+df
+
+str(df)
+df$Edu <- as.factor(df$Edu)
+str(df)
+```
+
+```{r}
+df[,"Sex"]
+df$Sex
+
+x <- seq(1,20)
+x
+
+my_list <- list(df = df, x = x, sex = sex)
+my_list
+
+my_list$x
+str(my_list)
+
+df$Eco
+```
+
+
 
