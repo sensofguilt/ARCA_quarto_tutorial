@@ -1,8 +1,44 @@
 ---
 title: "Me, myself, I"
-format: html
+format: 
+  html:
+    toc: true
+    toc-location: left
+    grid:
+    sidebar-width: 300px
+    body-width: 900px
+    margin-width: 300px
+    gutter-width: 1.5rem
 editor: visual
 ---
+
+:::{.column-margin}
+
+* Frutta di Luglio:
+  + Pesche Nettarine
+  + Pesche Gialle
+  + Albicocche
+  + Uva Vittoria
+  + Uva Fragola
+  + Susine Rosse
+  + Susine Gialle
+  + Pere Turandot
+  
+Verdura di Luglio:
+ + Pomodori:
+  - Grappolo
+  - Peretto
+  - Cuore di Bue
+  - Costoluto
+ + Pomodorini:
+  - Datterino
+  - Ciliegino
+  - Piccadilly
+ + Insalata:
+  - Canasta
+  - Gentile
+  - Romana
+:::
 
 ## Not only a verduraio
 
@@ -10,7 +46,7 @@ Hi, here's my first webpage with a presentation of myself.
 
 ### Between the two fighters...
 
-After years of indecision between psychology and statistics, I have found my place at [El Tamiso](https://www.eltamiso.it/) working as a shop assistant in Piazza delle Erbe 
+After years of indecision between *psychology* and **statistics**, I have found my place at [El Tamiso](https://www.eltamiso.it/) working as a shop assistant in Piazza delle Erbe 
 
 
 ![](img/erbe.jpg)
@@ -19,4 +55,6 @@ After years of indecision between psychology and statistics, I have found my pla
 Thanks to this opportunity I got to experience and I achieved one of my most impressive results of the year, selling fruit and vegetables to my father (Figure 1).
 
 ![Figure 1:Il pagamento](img/pp.jpg)
+
+I know it seems crazy but I can't 
 
