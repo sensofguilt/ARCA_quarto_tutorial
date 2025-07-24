@@ -5,6 +5,7 @@ author:
   email: an.santoni22@gmail.com
 format: 
   revealjs:
+    theme: [dark, custom.scss]
     self-contained: true
     scrollable: true
     footer: "bCOOL use4to"
@@ -34,4 +35,17 @@ editor: visual
 * set your revealjs with self-contained: true
 * if you want to have incremental content, go for incremental: true, you can adjust non incremental stuff later.
 * otherwise you can specify incremental: false and you can force increments later using . . .  (3 columns)
-*then you may setup email, footer, logo, show-slide-number
+* then you may setup email, footer, logo, show-slide-number 
+
+## How do i put content in different lines
+
+I can either use <.br> <br>
+
+or I put 2 spaces at the end of the line  
+let's try
+
+## customize your theme
+
+put theme: [dark, custom.scss] in your YUUUUMMML to modify the theme you want until you make it perfect.
+
+
