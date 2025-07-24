@@ -1,9 +1,16 @@
 ---
 title: "Why youshoulduse QuartoPresentation"
-author: "SenS"
+author:
+  name: "SenS"
+  email: an.santoni22@gmail.com
 format: 
   revealjs:
     self-contained: true
+    scrollable: true
+    footer: "bCOOL use4to"
+    incremental: true
+    slide-number: c/t
+    show-slide-number: all
 editor: visual
 
 ---
@@ -23,4 +30,8 @@ editor: visual
 
 ## FIRST THINGS FIRST
 
+* GET YOUR YAML RIGHT
 * set your revealjs with self-contained: true
+* if you want to have incremental content, go for incremental: true, you can adjust non incremental stuff later.
+* otherwise you can specify incremental: false and you can force increments later using . . .  (3 columns)
+*then you may setup email, footer, logo, show-slide-number

@@ -909,6 +909,7 @@ text-indent: -1em;
 }
 .reveal .slide:not(.center) {
 height: 100%;
+overflow-y: auto;
 }
 .reveal .slide.scrollable {
 overflow-y: auto;
@@ -993,6 +994,9 @@ margin-right: 0; }
 <div class="quarto-title-author-name">
 SenS 
 </div>
+<div class="quarto-title-author-email">
+<a href="mailto:an.santoni22@gmail.com">an.santoni22@gmail.com</a>
+</div>
 </div>
 </div>
 
@@ -1005,29 +1009,32 @@ SenS
 <section id="advantages" class="slide level2">
 <h2>Advantages</h2>
 <ul>
-<li>It’s cool</li>
-<li>It’s interactive</li>
-<li>Everyone is going to be astonished</li>
+<li class="fragment">It’s cool</li>
+<li class="fragment">It’s interactive</li>
+<li class="fragment">Everyone is going to be astonished</li>
 </ul>
 </section>
 <section id="disadvantages" class="slide level2">
 <h2>Disadvantages</h2>
 <ul>
-<li>HTML presentation are not stable</li>
-<li>You will not be invited at conferences</li>
+<li class="fragment">HTML presentation are not stable</li>
+<li class="fragment">You will not be invited at conferences</li>
 </ul>
 </section>
 <section id="first-things-first" class="slide level2">
 <h2>FIRST THINGS FIRST</h2>
 <ul>
-<li>set your revealjs with self-contained: true</li>
+<li class="fragment">GET YOUR YAML RIGHT</li>
+<li class="fragment">set your revealjs with self-contained: true</li>
+<li class="fragment">if you want to have incremental content, go for incremental: true, you can adjust non incremental stuff later.</li>
+<li class="fragment">otherwise you can specify incremental: false and you can force increments later using . . . (3 columns) *then you may setup email, footer, logo, show-slide-number</li>
 </ul>
 
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>bCOOL use4to</p>
 </div>
 </div></div>
 
@@ -2041,7 +2048,7 @@ window.QuartoSupport = function () {
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
