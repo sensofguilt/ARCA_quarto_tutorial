@@ -1,11 +1,14 @@
 ---
-title: "Presentation"
-author: "sens"
-format: revealjs
+title: "Why youshoulduse QuartoPresentation"
+author: "SenS"
+format: 
+  revealjs:
+    self-contained: true
 editor: visual
+
 ---
 
-### Why use Quarto presentation
+# Y use Quarto presentation
 
 ## Advantages
 
@@ -17,3 +20,7 @@ editor: visual
 
 * HTML presentation are not stable
 * You will not be invited at conferences
+
+## FIRST THINGS FIRST
+
+* set your revealjs with self-contained: true
