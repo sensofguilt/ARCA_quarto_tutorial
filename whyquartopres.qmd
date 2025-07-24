@@ -16,6 +16,14 @@ editor: visual
 
 ---
 
+```{r}
+#| include: false
+
+library(tidyverse)
+library(ggplot2)
+```
+
+
 # Y use Quarto presentation
 
 ## Advantages
@@ -49,3 +57,27 @@ let's try
 put theme: [dark, custom.scss] in your YUUUUMMML to modify the theme you want until you make it perfect.
 
 
+##
+
+```{r}
+#| fig-align: center
+#| code-line-numbers: "|2|3|"
+
+mtcars %>%                               
+  ggplot( aes(mpg, hp)) +   
+  geom_point() 
+
+```
+
+
+## {auto-animate="true"}
+
+```{r}
+
+mtcars %>%                               
+  ggplot( aes(mpg, hp, color = gear)) +   
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+##
