@@ -1,0 +1,105 @@
+---
+title: "ggplot2_for_newbies"
+author: "Sens"
+format:
+  html:
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+      gutter-width: 1.5rem 
+    self-contained: true
+    toc: true
+    toc-title: Indice
+    toc-location: left
+    theme:
+     light: minty
+     dark: superhero
+code-annotations: hover
+message: false
+warnings: false
+lang: en
+editor: visual
+bibliography: ref.bib
+citation-location: margin
+---
+
+## Face your enemy, ggplot2
+
+One of the coolest packages in R, and also one of the reason why a lot of people love R is ggplot2, that allows you to create very beautiful graphs and adapt those to your necessities or satisfy your quirks.
+
+I always struggled because real masters of ggplot2 create walls of code that gives me the headache and I never want to investigate how it was created, I am just interested in the beauty of it and I appreciate result. This is the reason I decide to create this document, as well as to practice my quarto skills.
+
+### Let's get started
+
+#### A package? What's that?
+
+First of all, since I don't want to assume that this is your first time using R, I should explain how to install and load the package, and maybe also what is a package.
+
+The official @R-exts gives you an idea about what a package is, but it gets too nerdy really fast, so the main interesting part is this:
+"A package is a directory of files which extend R [...]" 
+
+On the other hand, the wikipedia page @r_package_wikipedia_2025 gives a more approachable definition:
+
+"R packages are extensions to the R statistical programming language. R packages contain code, data, and documentation in a standardised collection format that can be installed by users of R". 
+
+#### Install and recall
+An easy way to install the ggplot2 package is to install the tidyverse package, one of the most revolutionary package in the R environment, that gives a whole new sintax that can be used to program in R.
+Otherwise, in order to install only the functions stored in the ggplot2 package, we must first install the package in our computer using:
+
+```{r}
+#| eval: false
+
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+install.packages("ggplot2")
+```
+Once the installation of the package is over, you need to recall the library in every script or quarto document in order to use the functions contained in the package, using the `r library(ggplot2)` function
+
+```{r}
+#| echo: true
+
+library(ggplot2)
+
+
+```
+
+### A first graph
+
+In order to produce our first graph, we must select a dataset that contains the data we can plot. We can use the `mpg` dataset that is already contained in the `ggplot2` package.
+
+The first step is the function `ggplot`  that defines a plot object that you then add layers to. The first argument is always going to be the dataset.
+
+```{r}
+#| include: false
+mpg = ggplot2::mpg
+```
+
+
+```{r}
+
+ggplot(data = mpg)  # <1>
+
+```
+1. The canva and the dataset we are taking variables from
+
+Since we didn't give the machine any information about what to plot we just get a grey rectangular that is the canva to which we are going to add further specification.
+The `mapping` argument is always defined in the `aes(x,y)` function, that takes as arguments which variables to map in the `x` and `y` axes.
+
+```{r}
+ggplot(data = mpg,                 # <1>
+       mapping = aes(displ,cty))    # <2>
+```
+1. The canva and the dataset we are taking variables from
+2. Defining what we want to map in which axis
+
+Now we have a metrical system but we didn't tell R how to visualize our data, so we add some geometrical information. In this case, if we are interested in a scatterplot, we must add `geom_point()` 
+
+```{r}
+ggplot(data = mpg,                  # <1>
+       mapping = aes(displ,cty)) +   # <2>
+  geom_point()                      # <3> 
+```
+
+1. The canva and the dataset we are taking variables from
+2. Defining what we want to map in which axis
+3. Defining we want the data to be represented by points

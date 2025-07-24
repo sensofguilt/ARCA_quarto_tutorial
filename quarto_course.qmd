@@ -16,9 +16,20 @@ lang: it
 editor: visual
 ---
 
+```{r}
+#| include: false
+
+library(ggplot2)
+library(tidyverse)
+library(corrplot)
+library(ggcorrplot)
+
+```
+
+
 # First level
 
-you can use the hash symbol # to specify different levels on your document, like title
+you can use the hash symbol \# to specify different levels on your document, like title
 
 ## Section
 
@@ -26,12 +37,41 @@ with 2 ash
 
 ### Subsection
 
-with 3 ash 
+with 3 ash
 
 #### Pararaph
 
 with 4 ash
 
+In order to write in *italic* you need to place the sentence within \* sign, you will put it between a double \*\* sign for **bold** and three \*\*\* for ***bold italic***
 
-In order to write in *italic* you need to place the sentence within * sign, you will put it between a double ** sign for **bold** 
-and three *** for ***bold italic***
+```{r}
+library(readr)
+data = read_csv("dataset.csv")
+```
+
+
+```{r}
+#| echo: true
+head(data)
+```
+
+```{r}
+#| echo: false
+str(data)
+```
+
+
+```{r}
+#| echo: fenced
+summary(data)
+``` 
+
+
+```{r}
+data %>%
+  ggplot(aes(anxiety, flexibility))+
+  geom_point()
+
+```
+

@@ -7,6 +7,11 @@ editor: visual
 
 ## Introduzione a R, Andreella
 
+```{r setup}
+knitr::opts_knit$set(root.dir = "C:/Users/andry/Documents/MEGAsync/Università/ARCA-Summer-School/data")
+```
+
+
 ```{r}
 rm(list = ls())
 ```
@@ -55,10 +60,10 @@ str(my_list)
 
 df$Eco
 ```
+
 ...
 
-### L2 
-
+### L2
 
 ```{r, include=FALSE, echo=FALSE}
 #to get the directory where i am right now
@@ -69,7 +74,6 @@ setwd("C:/Users/andry/Documents/MEGAsync/Università/ARCA-Summer-School/L2_Andre
 
 dir()
 ```
-
 
 ```{r}
 rm(list=ls())
@@ -117,7 +121,6 @@ if (age>= 18){
 
 ```
 
-
 ```{r zscore fuction}
 zscore = function(vect = NA){
   m = mean(vect, na.rm = T)
@@ -151,4 +154,259 @@ data("ChickWeight")
 head(datasets::Chickweight)
 
 ```
+
+```{r}
+ChickWeight %>% select(weight, Chick) %>% head()
+
+head(ChickWeight[c("weight", "Chick")])
+ChickWeight[c(1:6), c("weight","Chick")]
+```
+
+```{r}
+colnames(ChickWeight)
+
+ChickWeight %>% colnames()
+```
+
+```{r}
+head(ChickWeight[,c("TIme", "Chick", "Diet")])
+ChickWeight %>% head()
+
+table(ChickWeight$Chick)
+
+ChickWeight %>%
+  select(Weight, Chick) %>%
+  group_by(Chick) %>%
+  summarize(weight = mean(weight, na.omit = T)) %>%
+  View()
+  
+ChickWeight %>%
+  select(weight, Chick) %>%
+  group_by(Chick) %>%
+  summarize(weight = mean(weight, na.rm = T)) %>%
+  filter(weight >= mean(weight))
+  
+mean(ChickWeight$weight)
+
+```
+
+```{r}
+ChickWeight %>%
+  arrange(Chick, desc(weight)) %>%
+  head()
+```
+
+### L3 Data Wrangling
+
+```{r}
+library(readr)
+ahi <- read_csv("ahi-cesd.csv")
+db <- read_csv("participant-info.csv")
+
+str(ahi)
+str(db)
+
+summary(ahi)
+summary(db)
+```
+First we only will focus on the participant info dataset. We always use the str function to give a general view at the dataset.
+
+Then we must issue the missing values inside the dataframe, starting from the 'is.na(db)' function
+
+```{r}
+is.na(db)
+#in order to understand how many missing values I have
+sum(is.na(db))
+#if I want to know in which column they are
+apply(db, 2, function(x) sum(is.na(x))) 
+#actually the summary function gives insight about NA's
+
+db1 = db[complete.cases(db),]
+```
+
+```{r}
+# I want to consider if we have a missing in income or in age
+
+!(is.na(db$income)| is.na(db$age))
+
+sum((is.na(db$income)| is.na(db$age)))
+
+db2 <- db[!(is.na(db$income)| is.na(db$age)),]
+
+db3 <- na.omit(db)
+
+db1 <- db %>%
+  drop_na(age,income)
+
+```
+
+
+```{r}
+db1$sexF0 <- as.factor(db1$sex)
+
+db1$sexF1 <- factor(db1$sex, levels = c(1,2),
+                    labels = c("Female", "Male"))
+
+
+
+db1 <- db1 %>%
+  mutate(
+    sex = factor(sex, labels = c("Female","Male")),
+    educ = factor(educ, labels = c("<Year 12", "Year 12", "Vocational", "Bachelor","Postgraduate")),
+    income = factor(income, labels = c("Below Average","Average", "Above Average"))
+  )
+
+
+```
+
+#### Filtering
+
+```{r}
+#only female
+db11 <- db1[db1$sex == "Female",]
+#only postgraduate females
+db11 <- db1[db1$sex == "Female" & db1$educ == "Postgraduate",]
+#both females and postgraduate
+db11 <- db1[db1$sex == "Female" | db1$educ == "Postgraduate",]
+
+# we can also select columns using numeric notation but it's less tidy and of course can get messy
+```
+
+```{r}
+#with dplyr
+
+db11 <- db11 %>%
+  filter(sex =="Female" & educ == " Postgraduate")
+
+db11 <- db11 %>%
+  filter(sex =="Female" | educ == " Postgraduate")
+
+
+db11 <- db1 %>% select(sex)
+
+db11 <- db1 %>%
+  filter(sex == "Female") %>%
+  select(income, age)
+head(db11)
+```
+
+
+```{r}
+# create 4 equal-width age groups
+db1$age_class <- cut(db1$age, breaks = 4)
+db1$age_class <- cut(db1$age, breaks = c(18,40,65,85))
+
+sum(is.na(db1$age_class))
+
+
+db$agsquare <- db$age^2
+
+# with tidy
+
+db11 <- db1 %>%
+  mutate(age_class = cut(age, breaks = c(17,40,65,85)))
+
+db11 <- db1 %>%
+  mutate(age_square = age^2,
+         age_class = cut(age, breaks = c(17,40,65,85))) %>%
+  mutate(agesquare2 = agesquare/10)
+
+
+```
+
+
+```{r}
+db1 <- db1 %>%
+   mutate(age_group = ifelse(age < 30, "Young",
+                            ifelse(age >= 30 & age < 60, "Adult", "Senior"))) 
+           
+db1$age_group <- ifelse(db1$age < 30, "Young", no = ifelse(db1$age>=30 & db1$age <60, "Adult","Senior"))
+
+db1 <- db1 %>%
+  mutate(age_group = case_when(
+    age<30 ~ "Young"
+    age >= 30 & age< 60 ~ "Adult"
+    age >60 ~ "Senior"
+  ))
+
+```
+
+## Aggregate
+
+```{r}
+summary_base <- aggregate(
+  age~sex,
+  data = db1, 
+  fun = mean
+)
+summary_base
+```
+
+
+
+## L4
+
+```{r}
+ans <- tibble::as_tibble(with(datasets::anscombe, data.frame(x = c(x1, x2, x3, x4), 
+                                                             y = c(y1, y2, y3, y4), 
+                                                             nr = gl(4, nrow(anscombe)))))
+
+# Split data into 4 subsets:
+a_1 <- ans[ans$nr == 1, 1:2]
+a_2 <- ans[ans$nr == 2, 1:2]
+a_3 <- ans[ans$nr == 3, 1:2]
+a_4 <- ans[ans$nr == 4, 1:2]
+```
+
+```{r}
+mean(a_1$x)
+mean(a_2$x)
+mean(a_3$x)
+mean(a_4$x)
+
+var(a_1$x)
+var(a_2$x)
+var(a_3$x)
+var(a_4$x)
+
+cor(a_1$x,a_1$y)
+cor(a_2$x,a_2$y)
+cor(a_3$x,a_3$y)
+cor(a_4$x,a_4$y)
+
+```
+
+but.... VISUALIZE YOUR DATA
+
+### Generated data
+
+```{r}
+set.seed(1234)
+
+generateData <- function(time){
+  
+  db <- data.frame(Age = sample(c(15:60), 50, replace = TRUE),
+                   Sex = sample(c(0, 1), 50, replace = TRUE),
+                   Group = c(rep(0, 25),rep(1, 25)))
+  
+  db <- db %>% mutate(ATTC1 = ifelse(Group == 1, 
+                                     sample(c(3,4),1), 
+                                     sample(c(1:4),1)),
+                      Response_Time = log(Age) * rgamma(50, shape = 300) +
+                        log(time) * rgamma(50, shape = 300) + 
+                        Sex * rgamma(50, shape = 300) + 
+                        Group *rgamma(50, shape = 300) + 
+                        log(ATTC1) * rgamma(50, shape = 300))
+  
+  return(db)
+}
+
+db <- sapply(c(1:10), function(x) generateData(x), simplify = FALSE)
+```
+
+
+
+
+
+
 

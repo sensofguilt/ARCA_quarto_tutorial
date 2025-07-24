@@ -12,32 +12,30 @@ format:
 editor: visual
 ---
 
-:::{.column-margin}
-
-* Frutta di Luglio:
-  + Pesche Nettarine
-  + Pesche Gialle
-  + Albicocche
-  + Uva Vittoria
-  + Uva Fragola
-  + Susine Rosse
-  + Susine Gialle
-  + Pere Turandot
-  
-* Verdura di Luglio:
-  + Pomodori:
-    - Grappolo
-    - Peretto
-    - Cuore di Bue
-    - Costoluto
-  + Pomodorini:
-    - Datterino
-    - Ciliegino
-    - Piccadilly
-  + Insalata:
-    - Canasta
-    - Gentile
-    - Romana
+::: column-margin
+-   Frutta di Luglio:
+    -   Pesche Nettarine
+    -   Pesche Gialle
+    -   Albicocche
+    -   Uva Vittoria
+    -   Uva Fragola
+    -   Susine Rosse
+    -   Susine Gialle
+    -   Pere Turandot
+-   Verdura di Luglio:
+    -   Pomodori:
+        -   Grappolo
+        -   Peretto
+        -   Cuore di Bue
+        -   Costoluto
+    -   Pomodorini:
+        -   Datterino
+        -   Ciliegino
+        -   Piccadilly
+    -   Insalata:
+        -   Canasta
+        -   Gentile
+        -   Romana
 :::
 
 ## Not only a verduraio
@@ -46,19 +44,55 @@ Hi, here's my first webpage with a presentation of myself.
 
 ### Between the two fighters...
 
-After years of indecision between *psychology* and **statistics**, I have found my place at [El Tamiso](https://www.eltamiso.it/) working as a shop assistant in Piazza delle Erbe 
-
+After years of indecision between *psychology* and **statistics**, I have found my place at [El Tamiso](https://www.eltamiso.it/) working as a shop assistant in Piazza delle Erbe
 
 ![](img/erbe.jpg)
-
 
 Thanks to this opportunity I got to experience and I achieved one of my most impressive results of the year, selling fruit and vegetables to my father (Figure 1).
 
 ![Figure 1:Il pagamento](img/pp.jpg)
 
-
-::: {.callout-caution}
+::: callout-caution
 ## DON'T TRASH BAD LOOKING FOOD
 
 If you don't want to see me angry pay attention, I will not repeat this again
 :::
+
+::::: columns
+::: {.column width="50%"}
+This is my column where I show how #\|echo: fenced displays.
+
+```{r}
+#|echo: fenced
+#|label: mycode
+
+head(rock)
+```
+:::
+
+::: {.column width="50%"}
+This is my column where I show how #\|echo: true displays.
+
+```{r}
+#|echo: true
+#|label: mycode
+
+head(rock)
+```
+:::
+:::::
+
+Other possible options are warning : true or false, message: true or false, error: false or true.
+
+eval includes the code but doesn't execute it
+
+include execute the code but doesn't display the code and the output
+
+code-tools: source: true toggle: false caption: This is my code this options allows you to toggle a switch where I can show the code I produce
+
+
+### THINGS THAT MATTERS
+
+Here's what I am cooking, trying to understand and make understand ggplot2 [ggplot2_4_newbies]("ggplot2/ggplot_for_newbies.html").
+
+In the same time I'll answer one of the biggest questions on the earth [why_youse_quarto_presentation](whyquartopres.html)

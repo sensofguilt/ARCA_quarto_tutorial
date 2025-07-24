@@ -1,0 +1,19 @@
+---
+title: "Presentation"
+author: "sens"
+format: revealjs
+editor: visual
+---
+
+### Why use Quarto presentation
+
+## Advantages
+
+* It's cool
+* It's interactive
+* Everyone is going to be astonished
+
+## Disadvantages
+
+* HTML presentation are not stable
+* You will not be invited at conferences

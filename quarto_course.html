@@ -21,6 +21,69 @@ width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 
 
@@ -2580,7 +2643,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Data di Pubblicazione</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">21 luglio 2025</p>
+      <p class="date">23 luglio 2025</p>
     </div>
   </div>
   
@@ -2603,6 +2666,65 @@ vertical-align: -.125em;
 <h4 class="anchored" data-anchor-id="pararaph">Pararaph</h4>
 <p>with 4 ash</p>
 <p>In order to write in <em>italic</em> you need to place the sentence within * sign, you will put it between a double ** sign for <strong>bold</strong> and three *** for <strong><em>bold italic</em></strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;dataset.csv&quot;</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 300 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (2): mindfulness, activity
+dbl (2): anxiety, flexibility
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  anxiety flexibility mindfulness activity
+    &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;   
+1    50.2        44.4 no          pilates 
+2    31.5        47.7 yes         altro   
+3    34.0        65.6 no          pilates 
+4    37.1        50.7 no          altro   
+5    48.3        51.3 no          altro   
+6    16.9        67.2 yes         altro   </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [300 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ anxiety    : num [1:300] 50.2 31.5 34 37.1 48.3 ...
+ $ flexibility: num [1:300] 44.4 47.7 65.6 50.7 51.3 ...
+ $ mindfulness: chr [1:300] &quot;no&quot; &quot;yes&quot; &quot;no&quot; &quot;no&quot; ...
+ $ activity   : chr [1:300] &quot;pilates&quot; &quot;altro&quot; &quot;pilates&quot; &quot;altro&quot; ...
+ - attr(*, &quot;spec&quot;)=
+  .. cols(
+  ..   anxiety = col_double(),
+  ..   flexibility = col_double(),
+  ..   mindfulness = col_character(),
+  ..   activity = col_character()
+  .. )
+ - attr(*, &quot;problems&quot;)=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    anxiety        flexibility    mindfulness          activity        
+ Min.   : 1.483   Min.   :26.91   Length:300         Length:300        
+ 1st Qu.:25.977   1st Qu.:44.24   Class :character   Class :character  
+ Median :33.922   Median :49.56   Mode  :character   Mode  :character  
+ Mean   :33.418   Mean   :50.34                                        
+ 3rd Qu.:41.974   3rd Qu.:56.32                                        
+ Max.   :64.775   Max.   :82.41                                        </code></pre>
+</div>
+</div>
 </section>
 </section>
 </section>
