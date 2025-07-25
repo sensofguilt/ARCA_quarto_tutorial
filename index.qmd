@@ -92,7 +92,7 @@ code-tools: source: true toggle: false caption: This is my code this options all
 
 ### THINGS THAT MATTERS
 
-Here's what I am cooking, trying to understand and make understand ggplot2 [ggplot2_4_newbies](%22~ggplot2/ggplot_for_newbies.html%22).
+Here's what I am cooking, trying to understand and make understand ggplot2 [ggplot2_4_newbies](~ggplot2/ggplot_for_newbies.html).
 
 In the same time I'll answer one of the biggest questions on the earth [why_youse_quarto_presentation](whyquartopres.html)
 
