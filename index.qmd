@@ -90,9 +90,10 @@ include execute the code but doesn't display the code and the output
 
 code-tools: source: true toggle: false caption: This is my code this options allows you to toggle a switch where I can show the code I produce
 
-
 ### THINGS THAT MATTERS
 
-Here's what I am cooking, trying to understand and make understand ggplot2 [ggplot2_4_newbies]("~ggplot2/ggplot_for_newbies.html").
+Here's what I am cooking, trying to understand and make understand ggplot2 [ggplot2_4_newbies](%22~ggplot2/ggplot_for_newbies.html%22).
 
 In the same time I'll answer one of the biggest questions on the earth [why_youse_quarto_presentation](whyquartopres.html)
+
+I also finally shared [behind the PDF acronym](PDF.qmd)

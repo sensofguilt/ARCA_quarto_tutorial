@@ -11,7 +11,6 @@ editor: visual
 knitr::opts_knit$set(root.dir = "C:/Users/andry/Documents/MEGAsync/Università/ARCA-Summer-School/data")
 ```
 
-
 ```{r}
 rm(list = ls())
 ```
@@ -209,6 +208,7 @@ str(db)
 summary(ahi)
 summary(db)
 ```
+
 First we only will focus on the participant info dataset. We always use the str function to give a general view at the dataset.
 
 Then we must issue the missing values inside the dataframe, starting from the 'is.na(db)' function
@@ -239,7 +239,6 @@ db1 <- db %>%
   drop_na(age,income)
 
 ```
-
 
 ```{r}
 db1$sexF0 <- as.factor(db1$sex)
@@ -290,7 +289,6 @@ db11 <- db1 %>%
 head(db11)
 ```
 
-
 ```{r}
 # create 4 equal-width age groups
 db1$age_class <- cut(db1$age, breaks = 4)
@@ -313,7 +311,6 @@ db11 <- db1 %>%
 
 
 ```
-
 
 ```{r}
 db1 <- db1 %>%
@@ -341,8 +338,6 @@ summary_base <- aggregate(
 )
 summary_base
 ```
-
-
 
 ## L4
 
@@ -403,10 +398,3 @@ generateData <- function(time){
 
 db <- sapply(c(1:10), function(x) generateData(x), simplify = FALSE)
 ```
-
-
-
-
-
-
-
